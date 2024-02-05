@@ -19,23 +19,28 @@ public class MainClass {
 			
 			switch(reply) {
 			case 1:
-				
 				op.insertRecord();
 				break;
 			case 2:
+				op.delete();
 				break;
 			case 3:
+				op.updateRecord();
 				break;
 			case 4:
+				op.display_One();
 				break;
 			case 5:
+				op.display_All();
 				break;
 			default:
 				System.out.println("Invalid Input");
 			}}while(true);
 			
 		}
-	}
+	
+	
+}
 	
 
 
