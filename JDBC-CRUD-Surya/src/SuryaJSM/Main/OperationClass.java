@@ -25,6 +25,8 @@ public class OperationClass {
 		System.out.println("Enter Student Batch: ");
 		int studentBatch = sc.nextInt();
 		
+	if(con == null) {
+			con = connectionObject.getConnection();
 		String countStatus = "select max(ID) from Student";
 		PreparedStatement psmt0 = con.prepareStatement(countStatus);
 		ResultSet rs = psmt0.executeQuery();
@@ -33,8 +35,7 @@ public class OperationClass {
 		}
 		String insertQuery ="insert into student values(?,?,?,?,?)";
 		
-		if(con == null) {
-			con = connectionObject.getConnection();
+
 			psmt = con.prepareStatement(insertQuery);
 			count+=1;
 			
@@ -54,7 +55,7 @@ public class OperationClass {
 		}else {
 			System.out.println("Connection already established !!");
 		}
-		psmt0.close();
+		
 		psmt.close();
 		con.close();
 	}
