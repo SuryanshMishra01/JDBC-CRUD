@@ -14,7 +14,7 @@ public class OperationClass {
 	ConnectionClass connectionObject = new ConnectionClass();
 	PreparedStatement psmt = null;
 	int count = 0;
-	public void insertRecord() throws ClassNotFoundException, SQLException {
+public void insertRecord() throws ClassNotFoundException, SQLException {
 			
 		System.out.println("Enter Student UID: ");
 		String studentUID = sc.nextLine();
@@ -51,7 +51,7 @@ public class OperationClass {
 			else {
 				System.out.println("No record inserted !!");
 			}
-			
+		psmt0.close();	
 		}else {
 			System.out.println("Connection already established !!");
 		}
